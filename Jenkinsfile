@@ -2,45 +2,45 @@ pipeline {
   agent any
 
   stages {
-    stage('Build') {
+    stage("Build") {
       steps {
-        sh "echo 'Using Maven to build and package the application'"
+        bat 'echo Using Maven to compile and package the code'
       }
     }
 
-    stage('Unit and Integration Tests') {
+    stage("Unit and Integration Tests") {
       steps {
-        sh "echo 'Using JUnit and Mocha for unit and integration testing'"
+        bat 'echo Using JUnit and Postman for unit and integration testing'
       }
     }
 
-    stage('Code Analysis') {
+    stage("Code Analysis") {
       steps {
-        sh "echo 'Using SonarQube to analyze code quality and standards'"
+        bat 'echo Using SonarQube for code quality analysis'
       }
     }
 
-    stage('Security Scan') {
+    stage("Security Scan") {
       steps {
-        sh "echo 'Using OWASP Dependency-Check to scan for vulnerabilities'"
+        bat 'echo Using OWASP Dependency-Check for security scanning'
       }
     }
 
-    stage('Deploy to Staging') {
+    stage("Deploy to Staging") {
       steps {
-        sh "echo 'Deploying to staging server (e.g., AWS EC2 instance)'"
+        bat 'echo Deploying to AWS EC2 instance (staging)'
       }
     }
 
-    stage('Integration Tests on Staging') {
+    stage("Integration Tests on Staging") {
       steps {
-        sh "echo 'Running Postman or Selenium tests in staging environment'"
+        bat 'echo Running integration tests on staging environment using Postman'
       }
     }
 
-    stage('Deploy to Production') {
+    stage("Deploy to Production") {
       steps {
-        sh "echo 'Deploying application to production environment'"
+        bat 'echo Deploying to AWS EC2 instance (production)'
       }
     }
   }
